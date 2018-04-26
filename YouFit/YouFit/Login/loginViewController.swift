@@ -22,13 +22,23 @@ class loginViewController: UIViewController {
     
     
     @IBAction func login(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToUserHome", sender: self)
+        goToHome()
+//        performSegue(withIdentifier: "tabBarViewController", sender: self)
         
     }
     
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
         
+    }
+    
+    
+    func goToHome(){
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarViewController") as! tabBarViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
     }
     
     

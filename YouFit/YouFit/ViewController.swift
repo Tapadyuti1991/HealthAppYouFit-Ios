@@ -14,6 +14,11 @@ import UIKit
 class ViewController: UIViewController, UIScrollViewDelegate,UITextFieldDelegate{
 
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBAction func loginButton(_ sender: UIBarButtonItem) {
+        
+        print("inside login button")
+        performSegue(withIdentifier: "login", sender: self)
+    }
     
     @IBOutlet weak var scrollView: UIScrollView!
      var contentWidth:CGFloat = 0.0
@@ -63,11 +68,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UITextFieldDelegate
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+ 
 
 }
 

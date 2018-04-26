@@ -20,6 +20,9 @@
 		DFE1B4E820925339001F2816 /* getUserProfileRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1B4E720925339001F2816 /* getUserProfileRegisterViewController.swift */; };
 		DFE1B4ED209258A6001F2816 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1B4EC209258A6001F2816 /* loginViewController.swift */; };
 		DFE1B4F020925AB9001F2816 /* userHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1B4EF20925AB9001F2816 /* userHomeViewController.swift */; };
+		DFE1B4F3209265D8001F2816 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE1B4F1209265D8001F2816 /* Model.xcdatamodeld */; };
+		DFE1B4F520927010001F2816 /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1B4F420927010001F2816 /* tabBarViewController.swift */; };
+		DFE1B4F7209273E2001F2816 /* UserRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1B4F6209273E2001F2816 /* UserRunViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		DFE1B4E720925339001F2816 /* getUserProfileRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserProfileRegisterViewController.swift; sourceTree = "<group>"; };
 		DFE1B4EC209258A6001F2816 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		DFE1B4EF20925AB9001F2816 /* userHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userHomeViewController.swift; sourceTree = "<group>"; };
+		DFE1B4F2209265D8001F2816 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DFE1B4F420927010001F2816 /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
+		DFE1B4F6209273E2001F2816 /* UserRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRunViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB48C8820856DCE006F3F96 /* Main.storyboard */,
+				DFE1B4F1209265D8001F2816 /* Model.xcdatamodeld */,
 				DFE1B4EE20925A90001F2816 /* UserHome */,
 				DFE1B4E9209256F2001F2816 /* Login */,
 				DFE1B4DF209248CC001F2816 /* Register */,
@@ -173,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				DFE1B4EF20925AB9001F2816 /* userHomeViewController.swift */,
+				DFE1B4F420927010001F2816 /* tabBarViewController.swift */,
+				DFE1B4F6209273E2001F2816 /* UserRunViewController.swift */,
 			);
 			path = UserHome;
 			sourceTree = "<group>";
@@ -316,9 +325,12 @@
 				DFE1B4E820925339001F2816 /* getUserProfileRegisterViewController.swift in Sources */,
 				DFE1B4E120924972001F2816 /* RegisterViewController.swift in Sources */,
 				DFE1B4ED209258A6001F2816 /* loginViewController.swift in Sources */,
+				DFE1B4F520927010001F2816 /* tabBarViewController.swift in Sources */,
 				DFE1B4E420924AF2001F2816 /* CustomButton.swift in Sources */,
+				DFE1B4F3209265D8001F2816 /* Model.xcdatamodeld in Sources */,
 				DFB48C8720856DCE006F3F96 /* ViewController.swift in Sources */,
 				DFE1B4F020925AB9001F2816 /* userHomeViewController.swift in Sources */,
+				DFE1B4F7209273E2001F2816 /* UserRunViewController.swift in Sources */,
 				DFB48C8520856DCE006F3F96 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,8 +503,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XV68TZ5659;
 				INFOPLIST_FILE = YouFit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mighty.YouFit;
@@ -510,8 +523,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XV68TZ5659;
 				INFOPLIST_FILE = YouFit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mighty.YouFit;
@@ -628,6 +642,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DFE1B4F1209265D8001F2816 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFE1B4F2209265D8001F2816 /* Model.xcdatamodel */,
+			);
+			currentVersion = DFE1B4F2209265D8001F2816 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DFB48C7920856DCE006F3F96 /* Project object */;
 }

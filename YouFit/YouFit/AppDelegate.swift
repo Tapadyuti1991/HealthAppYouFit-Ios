@@ -44,3 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+func makeUIAlertController(Message: String) -> UIAlertController{
+    let alertController = UIAlertController(title:"Info",message:Message,preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alertController.addAction(okAction)
+    return alertController
+}
+

@@ -25,6 +25,13 @@ class getUserProfileRegisterViewController: UIViewController {
 
     @IBAction func doneButton(_ sender: CustomButton) {
         
+        if (name.text! == "" || weight.text! == "" || height.text! == "" ){
+            let vc = makeUIAlertController(Message: "Please Enter all the details ")
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+        else{
+        
         //Gender
         var userGender:String  = "Male"
         if(gender.selectedSegmentIndex == 1){
@@ -54,9 +61,19 @@ class getUserProfileRegisterViewController: UIViewController {
         var heightUs:String = height.text!
         var ageUs:String = String(comp.rawValue)
         
-        performSegue(withIdentifier: "goToMainScreen", sender: self)
+        goToHome()
         
+        }
         
+       
+    }
+    
+    func goToHome(){
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarViewController") as! tabBarViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+//        popOverVC.didMove(toParentViewController: self)
     }
     
     func  getBmiStatus(_ bmi:Double)->String
