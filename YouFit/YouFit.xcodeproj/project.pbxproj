@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF7D885D2092E04C007A186F /* MeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D885C2092E04C007A186F /* MeMainViewController.swift */; };
 		DFB48C8520856DCE006F3F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB48C8420856DCE006F3F96 /* AppDelegate.swift */; };
 		DFB48C8720856DCE006F3F96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB48C8620856DCE006F3F96 /* ViewController.swift */; };
 		DFB48C8A20856DCE006F3F96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB48C8820856DCE006F3F96 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		DF59CA94208855EA00ED558D /* YouFit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YouFit-Bridging-Header.h"; sourceTree = "<group>"; };
+		DF7D885C2092E04C007A186F /* MeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeMainViewController.swift; sourceTree = "<group>"; };
 		DFB48C8120856DCE006F3F96 /* YouFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB48C8420856DCE006F3F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB48C8620856DCE006F3F96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF7D88592092CC53007A186F /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				DF7D885C2092E04C007A186F /* MeMainViewController.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 		DFB48C7820856DCE006F3F96 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 			children = (
 				DFB48C8820856DCE006F3F96 /* Main.storyboard */,
 				DFE1B4F1209265D8001F2816 /* Model.xcdatamodeld */,
+				DF7D88592092CC53007A186F /* Me */,
 				DFE1B4EE20925A90001F2816 /* UserHome */,
 				DFE1B4E9209256F2001F2816 /* Login */,
 				DFE1B4DF209248CC001F2816 /* Register */,
@@ -332,6 +343,7 @@
 				DFE1B4F020925AB9001F2816 /* userHomeViewController.swift in Sources */,
 				DFE1B4F7209273E2001F2816 /* UserRunViewController.swift in Sources */,
 				DFB48C8520856DCE006F3F96 /* AppDelegate.swift in Sources */,
+				DF7D885D2092E04C007A186F /* MeMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

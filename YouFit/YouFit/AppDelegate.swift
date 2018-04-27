@@ -51,3 +51,16 @@ func makeUIAlertController(Message: String) -> UIAlertController{
     return alertController
 }
 
+extension UIView {
+    
+    
+    func dropShadow() {
+        layer.cornerRadius = 10.0
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: -1, height: 1)
+        layer.shadowRadius = 1
+    }
+ 
+}
+
