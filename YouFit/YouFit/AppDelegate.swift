@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
  
-//        SampleData.sharedinstance
-      
         return true
     }
 
@@ -90,11 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-
-    
-    
-    
-    
+ 
     
 }
 
@@ -121,36 +115,8 @@ extension UIView {
         layer.shadowOffset = CGSize(width: -1, height: 1)
         layer.shadowRadius = 1
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
+ 
  
 }
 
@@ -158,4 +124,7 @@ extension UIView {
 var currentUserLoggedIn:Users?
 var dataUser = [Users]()
 var dataUserBio = [UserBio]()
+
+
+
 

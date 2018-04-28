@@ -4,12 +4,13 @@
         <attribute name="activityName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="calorieBurnt" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currentTime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="withUserBio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserBio" inverseName="withAcitivity" inverseEntity="UserBio" syncable="YES"/>
+        <relationship name="withCalorieCounter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CalorieCounter" syncable="YES"/>
+        <relationship name="withUserBio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserBio" syncable="YES"/>
     </entity>
     <entity name="ActualDiet" representedClassName="ActualDiet" syncable="YES" codeGenerationType="class">
         <attribute name="currentDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="withbreakFast" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Breakfast" syncable="YES"/>
-        <relationship name="withCalorieCounter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CalorieCounter" inverseName="withActualDiet" inverseEntity="CalorieCounter" syncable="YES"/>
+        <relationship name="withCalorieCounter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CalorieCounter" syncable="YES"/>
         <relationship name="withDinner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dinner" syncable="YES"/>
         <relationship name="withLunch" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lunch" syncable="YES"/>
         <relationship name="withSnack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Snack" syncable="YES"/>
@@ -19,8 +20,8 @@
         <attribute name="calorieMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantityType" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withDietReco" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DietRecommended" inverseName="withBreakFast" inverseEntity="DietRecommended" syncable="YES"/>
-        <relationship name="withFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" inverseName="withBreakFast" inverseEntity="Food" syncable="YES"/>
+        <relationship name="withDietReco" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DietRecommended" syncable="YES"/>
+        <relationship name="withFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" syncable="YES"/>
     </entity>
     <entity name="CalorieCounter" representedClassName="CalorieCounter" syncable="YES" codeGenerationType="class">
         <attribute name="burntCalorie" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -30,65 +31,65 @@
         <attribute name="fatLeft" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="proteinLeft" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="targetCalorie" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="waterCounter" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="withActivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
-        <relationship name="withActualDiet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ActualDiet" inverseName="withCalorieCounter" inverseEntity="ActualDiet" syncable="YES"/>
-        <relationship name="withuserBio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserBio" inverseName="withCalorieCounter" inverseEntity="UserBio" syncable="YES"/>
+        <attribute name="waterCounter" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="withActivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
+        <relationship name="withActualDiet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ActualDiet" syncable="YES"/>
+        <relationship name="withuserBio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserBio" syncable="YES"/>
     </entity>
     <entity name="Categories" representedClassName="Categories" syncable="YES" codeGenerationType="class">
         <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withSubcategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubCategory" inverseName="withcategory" inverseEntity="SubCategory" syncable="YES"/>
+        <relationship name="withSubcategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubCategory" syncable="YES"/>
     </entity>
     <entity name="DietRecommended" representedClassName="DietRecommended" syncable="YES" codeGenerationType="class">
         <attribute name="dietId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="dietName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withBreakFast" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breakfast" inverseName="withDietReco" inverseEntity="Breakfast" syncable="YES"/>
-        <relationship name="withDinner" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dinner" inverseName="withDietReco" inverseEntity="Dinner" syncable="YES"/>
-        <relationship name="withLunch" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lunch" inverseName="withDietReco" inverseEntity="Lunch" syncable="YES"/>
-        <relationship name="withSnack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Snack" inverseName="withDietReco" inverseEntity="Snack" syncable="YES"/>
-        <relationship name="withUserBio" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserBio" inverseName="withDietReco" inverseEntity="UserBio" syncable="YES"/>
+        <relationship name="withBreakFast" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breakfast" syncable="YES"/>
+        <relationship name="withDinner" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dinner" syncable="YES"/>
+        <relationship name="withLunch" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lunch" syncable="YES"/>
+        <relationship name="withSnack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Snack" syncable="YES"/>
+        <relationship name="withUserBio" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserBio" syncable="YES"/>
     </entity>
     <entity name="Dinner" representedClassName="Dinner" syncable="YES" codeGenerationType="class">
         <attribute name="calorieMax" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="calorieMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantityType" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withDietReco" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DietRecommended" inverseName="withDinner" inverseEntity="DietRecommended" syncable="YES"/>
-        <relationship name="withFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" inverseName="withDinner" inverseEntity="Food" syncable="YES"/>
+        <relationship name="withDietReco" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DietRecommended" syncable="YES"/>
+        <relationship name="withFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" syncable="YES"/>
     </entity>
     <entity name="Food" representedClassName="Food" syncable="YES" codeGenerationType="class">
         <attribute name="calorie" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="carbs" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="fat" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="foodName" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="foodName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="protein" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withBreakFast" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breakfast" inverseName="withFood" inverseEntity="Breakfast" syncable="YES"/>
-        <relationship name="withDinner" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dinner" inverseName="withFood" inverseEntity="Dinner" syncable="YES"/>
-        <relationship name="withLunch" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lunch" inverseName="withFood" inverseEntity="Lunch" syncable="YES"/>
-        <relationship name="withSnack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Snack" inverseName="withFood" inverseEntity="Snack" syncable="YES"/>
-        <relationship name="withSubCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubCategory" inverseName="withFood" inverseEntity="SubCategory" syncable="YES"/>
+        <relationship name="withBreakFast" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breakfast" syncable="YES"/>
+        <relationship name="withDinner" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dinner" syncable="YES"/>
+        <relationship name="withLunch" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lunch" syncable="YES"/>
+        <relationship name="withSnack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Snack" syncable="YES"/>
+        <relationship name="withSubCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubCategory" syncable="YES"/>
     </entity>
     <entity name="Lunch" representedClassName="Lunch" syncable="YES" codeGenerationType="class">
         <attribute name="calorieMax" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="calorieMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantityType" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withDietReco" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DietRecommended" inverseName="withLunch" inverseEntity="DietRecommended" syncable="YES"/>
-        <relationship name="withFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" inverseName="withLunch" inverseEntity="Food" syncable="YES"/>
+        <relationship name="withDietReco" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DietRecommended" syncable="YES"/>
+        <relationship name="withFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" syncable="YES"/>
     </entity>
     <entity name="Snack" representedClassName="Snack" syncable="YES" codeGenerationType="class">
         <attribute name="calorieMax" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="calorieMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantityType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="withDietReco" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DietRecommended" inverseName="withSnack" inverseEntity="DietRecommended" syncable="YES"/>
-        <relationship name="withFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" inverseName="withSnack" inverseEntity="Food" syncable="YES"/>
+        <relationship name="withDietReco" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DietRecommended" syncable="YES"/>
+        <relationship name="withFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" syncable="YES"/>
     </entity>
     <entity name="SubCategory" representedClassName="SubCategory" syncable="YES" codeGenerationType="class">
         <attribute name="subCategoryName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withcategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="withSubcategory" inverseEntity="Categories" syncable="YES"/>
-        <relationship name="withFood" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" inverseName="withSubCategory" inverseEntity="Food" syncable="YES"/>
+        <relationship name="withcategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" syncable="YES"/>
+        <relationship name="withFood" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" syncable="YES"/>
     </entity>
     <entity name="UserBio" representedClassName="UserBio" syncable="YES" codeGenerationType="class">
         <attribute name="age" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -99,29 +100,29 @@
         <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nickName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="withAcitivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="withUserBio" inverseEntity="Activity" syncable="YES"/>
-        <relationship name="withCalorieCounter" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalorieCounter" inverseName="withuserBio" inverseEntity="CalorieCounter" syncable="YES"/>
-        <relationship name="withDietReco" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DietRecommended" inverseName="withUserBio" inverseEntity="DietRecommended" syncable="YES"/>
-        <relationship name="withUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="withBio" inverseEntity="Users" syncable="YES"/>
+        <relationship name="withAcitivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
+        <relationship name="withCalorieCounter" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalorieCounter" syncable="YES"/>
+        <relationship name="withDietReco" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DietRecommended" syncable="YES"/>
+        <relationship name="withUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" syncable="YES"/>
     </entity>
     <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withBio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserBio" inverseName="withUser" inverseEntity="UserBio" syncable="YES"/>
+        <relationship name="withBio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserBio" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Breakfast" positionX="-1008" positionY="36" width="128" height="133"/>
-        <element name="CalorieCounter" positionX="-623" positionY="-216" width="128" height="208"/>
-        <element name="DietRecommended" positionX="-1280" positionY="-45" width="128" height="148"/>
-        <element name="Dinner" positionX="-1008" positionY="362" width="128" height="133"/>
-        <element name="Food" positionX="-783" positionY="242" width="128" height="208"/>
-        <element name="Lunch" positionX="-999" positionY="207" width="128" height="133"/>
-        <element name="Snack" positionX="-1008" positionY="506" width="128" height="133"/>
-        <element name="UserBio" positionX="-398" positionY="9" width="128" height="28"/>
-        <element name="Users" positionX="-432" positionY="-189" width="128" height="88"/>
-        <element name="Categories" positionX="-288" positionY="270" width="128" height="73"/>
-        <element name="SubCategory" positionX="-513" positionY="270" width="128" height="88"/>
-        <element name="Activity" positionX="-1037" positionY="-225" width="128" height="103"/>
-        <element name="ActualDiet" positionX="-1271" positionY="153" width="128" height="133"/>
+        <element name="Activity" positionX="-1037" positionY="-225" width="128" height="120"/>
+        <element name="ActualDiet" positionX="-1271" positionY="153" width="128" height="135"/>
+        <element name="Breakfast" positionX="-1008" positionY="36" width="128" height="135"/>
+        <element name="CalorieCounter" positionX="-623" positionY="-216" width="128" height="210"/>
+        <element name="Categories" positionX="-288" positionY="270" width="128" height="75"/>
+        <element name="DietRecommended" positionX="-1280" positionY="-45" width="128" height="150"/>
+        <element name="Dinner" positionX="-1008" positionY="362" width="128" height="135"/>
+        <element name="Food" positionX="-783" positionY="242" width="128" height="210"/>
+        <element name="Lunch" positionX="-999" positionY="207" width="128" height="135"/>
+        <element name="Snack" positionX="-1008" positionY="506" width="128" height="135"/>
+        <element name="SubCategory" positionX="-513" positionY="270" width="128" height="90"/>
+        <element name="UserBio" positionX="-398" positionY="9" width="128" height="225"/>
+        <element name="Users" positionX="-432" positionY="-189" width="128" height="90"/>
     </elements>
 </model>

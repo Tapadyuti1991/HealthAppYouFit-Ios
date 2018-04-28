@@ -57,12 +57,14 @@ class loginViewController: UIViewController {
                         guard (e.password == password.text!) else{
                             userName.text! = ""
                             password.text! = ""
-                            currentUserLoggedIn = e  //Session Started
+                          
                             let vc =  makeUIAlertController(Message: "PassWord Not Matched, Please Try again")
                             self.present(vc, animated: true, completion: nil)
                             return
                         }
+                        
                         flagU = true
+                        currentUserLoggedIn = e    //Session Started
                     }
                 }
                 if flagU {

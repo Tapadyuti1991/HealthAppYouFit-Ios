@@ -129,32 +129,41 @@ class getUserProfileRegisterViewController: UIViewController {
     func  getBmiStatus(_ bmi:Double)->String
     {
         
-        if bmi < 16 {
-            return "Severe Thiness"
-        }
+//        if bmi < 16 {
+//            return "Severe Thiness"
+//        }
+//
+//        if bmi > 16 && bmi < 17{
+//            return "Moderate Thiness"
+//        }
+//        if bmi > 17 && bmi < 18.5{
+//            return "Mild Thiness"
+//        }
+        if bmi < 18.5{
+                        return "Thiness"
+                    }
         
-        if bmi > 16 && bmi < 17{
-            return "Moderate Thiness"
-        }
-        if bmi > 17 && bmi < 18.5{
-            return "Mild Thiness"
-        }
         if bmi > 18.5 && bmi < 25{
             return "Normal"
         }
-        if bmi > 25 && bmi < 30{
+        
+        if bmi > 25{
             return "Overweight"
         }
         
-        if bmi > 30 && bmi < 35{
-            return "Mild Obese"
-        }
-        if bmi > 35 && bmi < 40{
-            return "Moderate Obese"
-        }
-        if bmi > 40  {
-            return "Severe Obese"
-        }
+//        if bmi > 25 && bmi < 30{
+//            return "Overweight"
+//        }
+//
+//        if bmi > 30 && bmi < 35{
+//            return "Mild Obese"
+//        }
+//        if bmi > 35 && bmi < 40{
+//            return "Moderate Obese"
+//        }
+//        if bmi > 40  {
+//            return "Severe Obese"
+//        }
         
         return "Normal"
         

@@ -54,6 +54,8 @@ class userHomeViewController: UIViewController {
     let shapeLayer3 = CAShapeLayer()
     
     override func viewWillAppear(_ animated: Bool) {
+        print("View Will appear Gets Called")
+        //**************Layout**************
         calorieView.dropShadow()
         ClaorieDetailsView.dropShadow()
         trackDown.dropShadow()
@@ -64,36 +66,20 @@ class userHomeViewController: UIViewController {
         addExerciseView.dropShadow()
         mealView.dropShadow()
         
+        //** initiated the User Info in theHome Screen
         
+        var userBio:UserBio = (currentUserLoggedIn?.withBio)!
+        var CalorieCountSet = userBio.withCalorieCounter
+        for case let calCount as CalorieCounter in CalorieCountSet!{
+            let comp = NSCalendar.current.compare(Date(), to: calCount.curentTime!, toGranularity: .day)
+            if(comp.rawValue == 0){
+                calorieLeftValueLabel.text = "\(calCount.targetCalorie) KCal Left"
+            }
+            break
+        }
+       
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         
         var center1 = calorieLeftView.center
