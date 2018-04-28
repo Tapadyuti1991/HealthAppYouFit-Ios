@@ -64,6 +64,38 @@ class userHomeViewController: UIViewController {
         addExerciseView.dropShadow()
         mealView.dropShadow()
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         var center1 = calorieLeftView.center
         var center2 = eaternCalorieView.center
         var center3 = burntCalorieView.center

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF5782A92093AA6B00D32AEB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5782A82093AA6B00D32AEB /* HealthKit.framework */; };
+		DF5782AC2093B06700D32AEB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782AB2093B06700D32AEB /* HealthKitSetupAssistant.swift */; };
+		DF5782B02093C0A500D32AEB /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782AF2093C0A500D32AEB /* ProfileDataStore.swift */; };
+		DF5782B22093C3CA00D32AEB /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782B12093C3CA00D32AEB /* UserHealthProfile.swift */; };
+		DF5782B52093E34700D32AEB /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782B42093E34700D32AEB /* SampleData.swift */; };
 		DF7D885D2092E04C007A186F /* MeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D885C2092E04C007A186F /* MeMainViewController.swift */; };
 		DFB48C8520856DCE006F3F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB48C8420856DCE006F3F96 /* AppDelegate.swift */; };
 		DFB48C8720856DCE006F3F96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB48C8620856DCE006F3F96 /* ViewController.swift */; };
@@ -44,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF5782A42093AA6A00D32AEB /* YouFit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YouFit.entitlements; sourceTree = "<group>"; };
+		DF5782A82093AA6B00D32AEB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		DF5782AB2093B06700D32AEB /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		DF5782AF2093C0A500D32AEB /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
+		DF5782B12093C3CA00D32AEB /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
+		DF5782B42093E34700D32AEB /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		DF59CA94208855EA00ED558D /* YouFit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YouFit-Bridging-Header.h"; sourceTree = "<group>"; };
 		DF7D885C2092E04C007A186F /* MeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeMainViewController.swift; sourceTree = "<group>"; };
 		DFB48C8120856DCE006F3F96 /* YouFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5782A92093AA6B00D32AEB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +107,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF5782A52093AA6A00D32AEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF5782A82093AA6B00D32AEB /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF5782AA2093B04600D32AEB /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				DF5782AB2093B06700D32AEB /* HealthKitSetupAssistant.swift */,
+				DF5782AF2093C0A500D32AEB /* ProfileDataStore.swift */,
+				DF5782B12093C3CA00D32AEB /* UserHealthProfile.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		DF5782B32093DB4E00D32AEB /* SampleUserData */ = {
+			isa = PBXGroup;
+			children = (
+				DF5782B42093E34700D32AEB /* SampleData.swift */,
+			);
+			path = SampleUserData;
+			sourceTree = "<group>";
+		};
 		DF7D88592092CC53007A186F /* Me */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +148,7 @@
 				DFB48C9820856DCE006F3F96 /* YouFitTests */,
 				DFB48CA320856DCE006F3F96 /* YouFitUITests */,
 				DFB48C8220856DCE006F3F96 /* Products */,
+				DF5782A52093AA6A00D32AEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,8 +165,11 @@
 		DFB48C8320856DCE006F3F96 /* YouFit */ = {
 			isa = PBXGroup;
 			children = (
+				DF5782B32093DB4E00D32AEB /* SampleUserData */,
+				DF5782A42093AA6A00D32AEB /* YouFit.entitlements */,
 				DFB48C8820856DCE006F3F96 /* Main.storyboard */,
 				DFE1B4F1209265D8001F2816 /* Model.xcdatamodeld */,
+				DF5782AA2093B04600D32AEB /* Health */,
 				DF7D88592092CC53007A186F /* Me */,
 				DFE1B4EE20925A90001F2816 /* UserHome */,
 				DFE1B4E9209256F2001F2816 /* Login */,
@@ -267,6 +309,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					DFB48C9420856DCE006F3F96 = {
 						CreatedOnToolsVersion = 9.2;
@@ -337,6 +384,9 @@
 				DFE1B4E120924972001F2816 /* RegisterViewController.swift in Sources */,
 				DFE1B4ED209258A6001F2816 /* loginViewController.swift in Sources */,
 				DFE1B4F520927010001F2816 /* tabBarViewController.swift in Sources */,
+				DF5782B02093C0A500D32AEB /* ProfileDataStore.swift in Sources */,
+				DF5782AC2093B06700D32AEB /* HealthKitSetupAssistant.swift in Sources */,
+				DF5782B52093E34700D32AEB /* SampleData.swift in Sources */,
 				DFE1B4E420924AF2001F2816 /* CustomButton.swift in Sources */,
 				DFE1B4F3209265D8001F2816 /* Model.xcdatamodeld in Sources */,
 				DFB48C8720856DCE006F3F96 /* ViewController.swift in Sources */,
@@ -344,6 +394,7 @@
 				DFE1B4F7209273E2001F2816 /* UserRunViewController.swift in Sources */,
 				DFB48C8520856DCE006F3F96 /* AppDelegate.swift in Sources */,
 				DF7D885D2092E04C007A186F /* MeMainViewController.swift in Sources */,
+				DF5782B22093C3CA00D32AEB /* UserHealthProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = YouFit/YouFit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XV68TZ5659;
 				INFOPLIST_FILE = YouFit/Info.plist;
@@ -534,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = YouFit/YouFit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XV68TZ5659;
 				INFOPLIST_FILE = YouFit/Info.plist;
