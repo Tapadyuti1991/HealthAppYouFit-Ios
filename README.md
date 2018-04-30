@@ -16,9 +16,9 @@ Use Cases :
 
 4.User can update his/ her profile and its all meta data.
 
-5. User can surf various foods option that he can eat. 
+5.User can surf various foods option that he can eat. 
 
-**MainScreenShot**
+**FewScreenShots**
 
 ![screen shot 2018-04-30 at 6 14 47 pm](https://user-images.githubusercontent.com/23444603/39454048-14721748-4ca7-11e8-94f3-f38f40c147af.png)
 ![screen shot 2018-04-30 at 6 15 38 pm](https://user-images.githubusercontent.com/23444603/39454069-2c416fae-4ca7-11e8-99e6-dda482cb3659.png)
