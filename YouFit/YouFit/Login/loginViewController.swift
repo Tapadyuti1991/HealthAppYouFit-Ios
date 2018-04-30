@@ -53,18 +53,18 @@ class loginViewController: UIViewController {
                 dataUser = try context.fetch(Users.fetchRequest())
                 var flagU:Bool = false
                 for e in dataUser{
+                    print(e.email)
                     if e.email == userName.text! {
                         guard (e.password == password.text!) else{
                             userName.text! = ""
                             password.text! = ""
-                          
+                            
                             let vc =  makeUIAlertController(Message: "PassWord Not Matched, Please Try again")
                             self.present(vc, animated: true, completion: nil)
                             return
                         }
-                        
                         flagU = true
-                        currentUserLoggedIn = e    //Session Started
+                        currentUserLoggedIn = e  //Session Started
                     }
                 }
                 if flagU {

@@ -33,18 +33,23 @@ class userHomeViewController: UIViewController {
     
     @IBOutlet weak var logWater: UIView!
     
+    @IBOutlet weak var waterStepperLabel: UILabel!
     
     @IBOutlet weak var lunchView: UIView!
     
+    @IBOutlet weak var lunchRecom: UIButton!
     
     @IBOutlet weak var dinnerView: UIView!
+    @IBOutlet weak var dinnerRecomButto: UIButton!
     
     @IBOutlet weak var snacksView: UIView!
     
+    @IBOutlet weak var snackRecomButt: UIButton!
     
     
     @IBOutlet weak var addExerciseView: UIView!
     
+    @IBOutlet weak var addExcersiceRecomButt: UIButton!
     
     @IBOutlet weak var mealView: UIView!
     
@@ -53,9 +58,11 @@ class userHomeViewController: UIViewController {
     let shapeLayer2 = CAShapeLayer()
     let shapeLayer3 = CAShapeLayer()
     
+    var currentCalCounter:CalorieCounter?
+    
     override func viewWillAppear(_ animated: Bool) {
-        print("View Will appear Gets Called")
-        //**************Layout**************
+        print("View will appear")
+        
         calorieView.dropShadow()
         ClaorieDetailsView.dropShadow()
         trackDown.dropShadow()
@@ -66,22 +73,65 @@ class userHomeViewController: UIViewController {
         addExerciseView.dropShadow()
         mealView.dropShadow()
         
-        //** initiated the User Info in theHome Screen
+        var calorie1Percent:CGFloat?
+        var calorie2Percent:CGFloat?
+        var calorie3Percent:CGFloat?
         
+        print("\(currentUserLoggedIn?.email) logged in ")
         var userBio:UserBio = (currentUserLoggedIn?.withBio)!
         var CalorieCountSet = userBio.withCalorieCounter
-        for case let calCount as CalorieCounter in CalorieCountSet!{
-            let comp = NSCalendar.current.compare(Date(), to: calCount.curentTime!, toGranularity: .day)
-            if(comp.rawValue == 0){
-                calorieLeftValueLabel.text = "\(calCount.targetCalorie) KCal Left"
+        
+        var currentUsedfat = 0
+        var currentUsedProtein = 0
+        var currentUsedCarb = 0
+        var currentWaterCounter = 0.0
+        
+        do{
+            dataUser = try context.fetch(Users.fetchRequest())
+            
+            for e in dataUser{
+                if(e.email == currentUserLoggedIn?.email){
+                         for case let calCount as CalorieCounter in (e.withBio?.withCalorieCounter!)!{
+                            let comp = NSCalendar.current.compare(Date(), to: calCount.curentTime!, toGranularity: .day)
+                            if(comp.rawValue == 0){
+                                calorieLeftValueLabel.text = "\(calCount.targetCalorie) KCal Left"
+                                calorie1Percent = CGFloat(calCount.burntCalorie/calCount.targetCalorie)
+                                
+                                eatenCalorieLabel.text = "\(calCount.eatCalorie)KCal"
+                                calorie2Percent = CGFloat(calCount.eatCalorie/calCount.targetCalorie)
+                                
+                                burntCalorieLabel.text = "\(calCount.burntCalorie)KCal"
+                                calorie3Percent = CGFloat(calCount.burntCalorie/calCount.targetCalorie)
+                                
+                                currentUsedfat = Int(calCount.fatLeft)
+                                currentUsedProtein = Int(calCount.proteinLeft)
+                                currentUsedCarb = Int(calCount.carbLeft)
+                                
+                                currentWaterCounter = Double(calCount.waterCounter)
+                                
+                                currentCalCounter = calCount
+//                                lunchRecom.tit = "Recommended 400-545 Kcal"
+                            }
+                            break
+                        }
+                }
+                break
+                
             }
-            break
         }
-       
+            catch{
+                
+            }
         
+        carbsProgressLabel.text = "\(Int(userBio.totalCarb) - currentUsedCarb) Left"
+        proteinProgressLabel.text = "\(Int(userBio.totalProtein) - currentUsedProtein) Left"
+        fatProgressLabel.text = "\(Int(userBio.totalFat) - currentUsedfat) Left"
+        
+        carbsProgress.progress = Float(currentUsedCarb)
+        proteinProgress.progress = Float(currentUsedProtein)
+        fatProgress.progress = Float(currentUsedfat)
 
-        
-        
+ 
         var center1 = calorieLeftView.center
         var center2 = eaternCalorieView.center
         var center3 = burntCalorieView.center
@@ -96,13 +146,11 @@ class userHomeViewController: UIViewController {
         
         
         
-        var calorie1Percent:CGFloat  = 0.5
-        var calorie2Percent:CGFloat  = 0.7
-        var calorie3Percent:CGFloat  = 0.9
+      
         
-        let circularPath1 = UIBezierPath(arcCenter: center1, radius: radius1, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie1Percent, clockwise: true)
-        let circularPath2 = UIBezierPath(arcCenter: center2, radius: radius2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie2Percent, clockwise: true)
-        let circularPath3 = UIBezierPath(arcCenter: center3, radius: radius3, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie3Percent, clockwise: true)
+        let circularPath1 = UIBezierPath(arcCenter: center1, radius: radius1, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie1Percent!, clockwise: true)
+        let circularPath2 = UIBezierPath(arcCenter: center2, radius: radius2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie2Percent!, clockwise: true)
+        let circularPath3 = UIBezierPath(arcCenter: center3, radius: radius3, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie3Percent!, clockwise: true)
         
         let trackPath1 = UIBezierPath(arcCenter: center1, radius: radius1, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi , clockwise: true)
         let trackPath2 = UIBezierPath(arcCenter: center2, radius: radius2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi , clockwise: true)
@@ -155,6 +203,11 @@ class userHomeViewController: UIViewController {
         
         
         
+        animateCalorie1()
+        animateCalorie2()
+        animateCalorie3()
+        
+        
         
         
         
@@ -195,28 +248,50 @@ class userHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animateCalorie1()
-        animateCalorie2()
-        animateCalorie3()
+        
         
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func waterStepper(_ sender: UIStepper) {
+        waterStepperLabel.text =  String(sender.value)
+        currentCalCounter?.waterCounter = sender.value
+        
+        do{
+            dataUser = try context.fetch(Users.fetchRequest())
+            
+            for e in dataUser{
+                if(e.email == currentUserLoggedIn?.email){
+                    for case let calCount as CalorieCounter in (e.withBio?.withCalorieCounter!)!{
+                        let comp = NSCalendar.current.compare(Date(), to: calCount.curentTime!, toGranularity: .day)
+                        if(comp.rawValue == 0){
+                            calCount.waterCounter = sender.value
+                        }
+                    }
+                }
+            }
+            
+                    
+        }
+        catch{
+            
+        }
+        
+        appDelegate.saveContext()
+        
+ 
+        
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        appDelegate.saveContext()
     }
     
 
-    /*
-    // MARK: - Navigation
+   
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
