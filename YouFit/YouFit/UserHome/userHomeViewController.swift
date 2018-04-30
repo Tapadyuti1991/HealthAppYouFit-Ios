@@ -189,7 +189,7 @@ class userHomeViewController: UIViewController {
         shapeLayer1.strokeEnd = 0
         calorieLeftView.layer.addSublayer(shapeLayer1)
         
-        trackLayer2.strokeColor = UIColor.init(red: 255.0/255, green: 255.0/255, blue:209.0/255, alpha: 1.0).cgColor
+        trackLayer2.strokeColor = UIColor.init(red: 171.0/255, green: 255.0/255, blue:190.0/255, alpha: 1.0).cgColor
         trackLayer2.lineWidth = 5
         trackLayer2.fillColor = UIColor.clear.cgColor
         trackLayer2.lineCap = kCALineCapRound
@@ -202,7 +202,7 @@ class userHomeViewController: UIViewController {
         shapeLayer2.strokeEnd = 0
         eaternCalorieView.layer.addSublayer(shapeLayer2)
         
-        trackLayer3.strokeColor = UIColor.init(red: 255.0/255, green: 255.0/255, blue:209.0/255, alpha: 1.0).cgColor
+        trackLayer3.strokeColor = UIColor.init(red: 171.0/255, green: 255.0/255, blue:190.0/255, alpha: 1.0).cgColor
         trackLayer3.lineWidth = 5
         trackLayer3.fillColor = UIColor.clear.cgColor
         trackLayer3.lineCap = kCALineCapRound

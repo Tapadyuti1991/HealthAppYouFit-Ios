@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let locationManager = LocationManager.shared
         locationManager.requestWhenInUseAuthorization()
  
-//        SampleData.sharedinstance
+        SampleData.sharedinstance
       
         return true
     }

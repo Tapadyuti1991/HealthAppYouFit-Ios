@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF0FF8F32097CE81007E7ED5 /* FoodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FF8F22097CE81007E7ED5 /* FoodViewCell.swift */; };
+		DF0FF8F62097CE93007E7ED5 /* updateBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FF8F42097CE92007E7ED5 /* updateBioViewController.swift */; };
+		DF0FF8F72097CE93007E7ED5 /* displayFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FF8F52097CE93007E7ED5 /* displayFoodViewController.swift */; };
 		DF5782A92093AA6B00D32AEB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5782A82093AA6B00D32AEB /* HealthKit.framework */; };
 		DF5782AC2093B06700D32AEB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782AB2093B06700D32AEB /* HealthKitSetupAssistant.swift */; };
 		DF5782B02093C0A500D32AEB /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782AF2093C0A500D32AEB /* ProfileDataStore.swift */; };
@@ -52,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF0FF8F22097CE81007E7ED5 /* FoodViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewCell.swift; sourceTree = "<group>"; };
+		DF0FF8F42097CE92007E7ED5 /* updateBioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateBioViewController.swift; sourceTree = "<group>"; };
+		DF0FF8F52097CE93007E7ED5 /* displayFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = displayFoodViewController.swift; sourceTree = "<group>"; };
 		DF5782A42093AA6A00D32AEB /* YouFit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YouFit.entitlements; sourceTree = "<group>"; };
 		DF5782A82093AA6B00D32AEB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		DF5782AB2093B06700D32AEB /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 		DF5782AA2093B04600D32AEB /* Health */ = {
 			isa = PBXGroup;
 			children = (
+				DF0FF8F22097CE81007E7ED5 /* FoodViewCell.swift */,
 				DF5782AB2093B06700D32AEB /* HealthKitSetupAssistant.swift */,
 				DF5782AF2093C0A500D32AEB /* ProfileDataStore.swift */,
 				DF5782B12093C3CA00D32AEB /* UserHealthProfile.swift */,
@@ -142,6 +149,8 @@
 		DF7D88592092CC53007A186F /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				DF0FF8F52097CE93007E7ED5 /* displayFoodViewController.swift */,
+				DF0FF8F42097CE92007E7ED5 /* updateBioViewController.swift */,
 				DF7D885C2092E04C007A186F /* MeMainViewController.swift */,
 			);
 			path = Me;
@@ -388,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0FF8F32097CE81007E7ED5 /* FoodViewCell.swift in Sources */,
 				DFE1B4E620925253001F2816 /* getStartedRegisterViewController.swift in Sources */,
 				DFE1B4E820925339001F2816 /* getUserProfileRegisterViewController.swift in Sources */,
 				DFE1B4E120924972001F2816 /* RegisterViewController.swift in Sources */,
@@ -402,8 +412,10 @@
 				DFB48C8720856DCE006F3F96 /* ViewController.swift in Sources */,
 				DF5AF90C209798E0001EE9D5 /* detailsofRunViewController.swift in Sources */,
 				DFE1B4F020925AB9001F2816 /* userHomeViewController.swift in Sources */,
+				DF0FF8F72097CE93007E7ED5 /* displayFoodViewController.swift in Sources */,
 				DFE1B4F7209273E2001F2816 /* UserRunViewController.swift in Sources */,
 				DFB48C8520856DCE006F3F96 /* AppDelegate.swift in Sources */,
+				DF0FF8F62097CE93007E7ED5 /* updateBioViewController.swift in Sources */,
 				DF5AF90A20979883001EE9D5 /* FormatDisplay.swift in Sources */,
 				DF7D885D2092E04C007A186F /* MeMainViewController.swift in Sources */,
 				DF5782B22093C3CA00D32AEB /* UserHealthProfile.swift in Sources */,
