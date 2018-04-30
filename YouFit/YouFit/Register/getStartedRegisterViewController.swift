@@ -42,6 +42,10 @@ class getStartedRegisterViewController: UIViewController {
             }
             
             print("HealthKit Successfully Authorized.")
+            
+            
+            let vc =  makeUIAlertController(Message: "You have already Authorized. Thank you!")
+            self.present(vc, animated: true, completion: nil)
         }
         
     }

@@ -19,7 +19,7 @@ class getUserProfileRegisterViewController: UIViewController {
     
     var userAge:String?
     var biologicalSexLabel:Int?
-    var bloodTypeLabel:Int?
+    var bloodTypeLabel:Int = 1
     var bodyMassIndexLabel:Double?
     
     private let userHealthProfile = UserHealthProfile()
@@ -39,6 +39,8 @@ class getUserProfileRegisterViewController: UIViewController {
     }
 
     @IBAction func doneButton(_ sender: CustomButton) {
+        
+        print("Onside Done Button")
         
         if (name.text! == "" || weight.text! == "" || height.text! == "" ){
             let vc = makeUIAlertController(Message: "Please Enter all the details ")
@@ -100,8 +102,26 @@ class getUserProfileRegisterViewController: UIViewController {
             user.weight = Double(weight.text!)!
             user.bmi = bmi
             user.bmiStatus = bmiStatus
-            user.age = Int16(userHealthProfile.age!)
-            user.bloodType =  Int16(bloodTypeLabel!)
+            
+            if let agea = userHealthProfile.age {
+                
+                print("before agea")
+                print(agea)
+                user.age = Int16(agea)
+                print("After agea")
+                
+            }
+            
+            else
+            {
+                print("Inside  Guard")
+                user.age =  Int16(ageUs)!
+                print("After Assigning value")
+            }
+            
+           
+            
+            user.bloodType =  Int16(bloodTypeLabel)
             user.withUser?.email = currentUserLoggedIn?.email
             
             let photo111 = UIImage(named: "me")
@@ -139,23 +159,36 @@ class getUserProfileRegisterViewController: UIViewController {
             user.totalCarb = totalcarb!
             user.totalProtein = totalProtein!
             
- 
-           
+            let cc = CalorieCounter(context: context)
+            cc.burntCalorie = 1
+            cc.carbLeft = 0
+            cc.curentTime = Date()
+            cc.fatLeft = 0
+            cc.proteinLeft = 0
+            cc.waterCounter = 0.0
+            cc.eatCalorie = 1
+            cc.targetCalorie = targetCalorie!
+            
+            
+            
+            var ccvar = [cc]
+            user.withCalorieCounter = NSSet(array:ccvar)
+            
+            currentUserLoggedIn?.withBio = user
+
+            
+            print("Before saveing context")
             appDelegate.saveContext()
-            
-            
-            
-            
-            
-//        saveBodyMassIndexToHealthKit()
-        goToHome()
-        
+            print("After saveing context")
+            goToHome()
+            print("After Goin to Home")
         }
         
        
     }
     
     func goToHome(){
+        print("Inside Going Home Dashboard")
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarViewController") as! tabBarViewController
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame

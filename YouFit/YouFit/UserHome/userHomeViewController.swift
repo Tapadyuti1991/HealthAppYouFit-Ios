@@ -89,15 +89,21 @@ class userHomeViewController: UIViewController {
         do{
             dataUser = try context.fetch(Users.fetchRequest())
             
-            for e in dataUser{
+            for e in dataUser {
+                print(e.email)
                 if(e.email == currentUserLoggedIn?.email){
                          for case let calCount as CalorieCounter in (e.withBio?.withCalorieCounter!)!{
                             let comp = NSCalendar.current.compare(Date(), to: calCount.curentTime!, toGranularity: .day)
                             if(comp.rawValue == 0){
                                 calorieLeftValueLabel.text = "\(calCount.targetCalorie) KCal Left"
-                                calorie1Percent = CGFloat(calCount.burntCalorie/calCount.targetCalorie)
+                                print("*********")
+                                print(calCount.burntCalorie)
+                                calorie1Percent = CGFloat((calCount.burntCalorie/calCount.targetCalorie))
+                                print(calorie1Percent)
                                 
                                 eatenCalorieLabel.text = "\(calCount.eatCalorie)KCal"
+                                print("*********")
+                                print(calCount.eatCalorie)
                                 calorie2Percent = CGFloat(calCount.eatCalorie/calCount.targetCalorie)
                                 
                                 burntCalorieLabel.text = "\(calCount.burntCalorie)KCal"
@@ -108,14 +114,16 @@ class userHomeViewController: UIViewController {
                                 currentUsedCarb = Int(calCount.carbLeft)
                                 
                                 currentWaterCounter = Double(calCount.waterCounter)
-                                
+                                 waterStepperLabel.text = String(currentWaterCounter)
+                                print(calorie2Percent)
+                                print(calorie3Percent)
                                 currentCalCounter = calCount
 //                                lunchRecom.tit = "Recommended 400-545 Kcal"
                             }
                             break
                         }
                 }
-                break
+                
                 
             }
         }
@@ -140,17 +148,24 @@ class userHomeViewController: UIViewController {
         let trackLayer2 = CAShapeLayer()
         let trackLayer3 = CAShapeLayer()
         
-        var radius1:CGFloat  = 30
+        var radius1:CGFloat  = 35
         var radius2:CGFloat = 15
         var radius3:CGFloat = 15
         
         
         
-      
+        if calorie1Percent == 0.0 {calorie1Percent = 0.01}
+        if calorie2Percent == 0.0 {calorie2Percent = 0.01}
+        if calorie3Percent == 0.0 {calorie3Percent = 0.01}
         
-        let circularPath1 = UIBezierPath(arcCenter: center1, radius: radius1, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie1Percent!, clockwise: true)
-        let circularPath2 = UIBezierPath(arcCenter: center2, radius: radius2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie2Percent!, clockwise: true)
-        let circularPath3 = UIBezierPath(arcCenter: center3, radius: radius3, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie3Percent!, clockwise: true)
+        
+        print(calorie1Percent)
+        print(calorie2Percent)
+        print(calorie3Percent)
+        
+        let circularPath1 = UIBezierPath(arcCenter: center1, radius: radius1, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie1Percent! - CGFloat.pi / 2, clockwise: true)
+        let circularPath2 = UIBezierPath(arcCenter: center2, radius: radius2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie2Percent! - CGFloat.pi / 2, clockwise: true)
+        let circularPath3 = UIBezierPath(arcCenter: center3, radius: radius3, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi * calorie3Percent! - CGFloat.pi / 2, clockwise: true)
         
         let trackPath1 = UIBezierPath(arcCenter: center1, radius: radius1, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi , clockwise: true)
         let trackPath2 = UIBezierPath(arcCenter: center2, radius: radius2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi , clockwise: true)
@@ -161,14 +176,14 @@ class userHomeViewController: UIViewController {
         trackLayer2.path = trackPath2.cgPath
         trackLayer3.path = trackPath3.cgPath
         
-        trackLayer1.strokeColor = UIColor.init(red: 255.0/255, green: 255.0/255, blue:209.0/255, alpha: 1.0).cgColor
-        trackLayer1.lineWidth = 5
+        trackLayer1.strokeColor = UIColor.init(red: 171.0/255, green: 255.0/255, blue:190.0/255, alpha: 1.0).cgColor
+        trackLayer1.lineWidth = 8
         trackLayer1.fillColor = UIColor.clear.cgColor
         trackLayer1.lineCap = kCALineCapRound
         calorieLeftView.layer.addSublayer(trackLayer1)
         shapeLayer1.path = circularPath1.cgPath
         shapeLayer1.strokeColor = UIColor.init(red: 255.0/255, green: 128.0/255, blue:0.0/255, alpha: 1.0).cgColor
-        shapeLayer1.lineWidth = 5
+        shapeLayer1.lineWidth = 8
         shapeLayer1.fillColor = UIColor.clear.cgColor
         shapeLayer1.lineCap = kCALineCapRound
         shapeLayer1.strokeEnd = 0
@@ -201,18 +216,11 @@ class userHomeViewController: UIViewController {
         burntCalorieView.layer.addSublayer(shapeLayer3)
         
         
-        
-        
         animateCalorie1()
         animateCalorie2()
         animateCalorie3()
         
-        
-        
-        
-        
-        
-        
+ 
         
     }
     

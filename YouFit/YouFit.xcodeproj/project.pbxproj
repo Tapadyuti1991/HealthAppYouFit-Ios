@@ -12,6 +12,9 @@
 		DF5782B02093C0A500D32AEB /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782AF2093C0A500D32AEB /* ProfileDataStore.swift */; };
 		DF5782B22093C3CA00D32AEB /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782B12093C3CA00D32AEB /* UserHealthProfile.swift */; };
 		DF5782B52093E34700D32AEB /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5782B42093E34700D32AEB /* SampleData.swift */; };
+		DF5AF90920979883001EE9D5 /* UnitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5AF90720979883001EE9D5 /* UnitExtensions.swift */; };
+		DF5AF90A20979883001EE9D5 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5AF90820979883001EE9D5 /* FormatDisplay.swift */; };
+		DF5AF90C209798E0001EE9D5 /* detailsofRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5AF90B209798E0001EE9D5 /* detailsofRunViewController.swift */; };
 		DF7D885D2092E04C007A186F /* MeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D885C2092E04C007A186F /* MeMainViewController.swift */; };
 		DFB48C8520856DCE006F3F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB48C8420856DCE006F3F96 /* AppDelegate.swift */; };
 		DFB48C8720856DCE006F3F96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB48C8620856DCE006F3F96 /* ViewController.swift */; };
@@ -56,6 +59,9 @@
 		DF5782B12093C3CA00D32AEB /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
 		DF5782B42093E34700D32AEB /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		DF59CA94208855EA00ED558D /* YouFit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YouFit-Bridging-Header.h"; sourceTree = "<group>"; };
+		DF5AF90720979883001EE9D5 /* UnitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
+		DF5AF90820979883001EE9D5 /* FormatDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
+		DF5AF90B209798E0001EE9D5 /* detailsofRunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailsofRunViewController.swift; sourceTree = "<group>"; };
 		DF7D885C2092E04C007A186F /* MeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeMainViewController.swift; sourceTree = "<group>"; };
 		DFB48C8120856DCE006F3F96 /* YouFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB48C8420856DCE006F3F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +222,8 @@
 		DFE1B4E220924AB8001F2816 /* CustomFiles */ = {
 			isa = PBXGroup;
 			children = (
+				DF5AF90820979883001EE9D5 /* FormatDisplay.swift */,
+				DF5AF90720979883001EE9D5 /* UnitExtensions.swift */,
 				DFE1B4E320924AF2001F2816 /* CustomButton.swift */,
 			);
 			path = CustomFiles;
@@ -232,6 +240,7 @@
 		DFE1B4EE20925A90001F2816 /* UserHome */ = {
 			isa = PBXGroup;
 			children = (
+				DF5AF90B209798E0001EE9D5 /* detailsofRunViewController.swift */,
 				DFE1B4EF20925AB9001F2816 /* userHomeViewController.swift */,
 				DFE1B4F420927010001F2816 /* tabBarViewController.swift */,
 				DFE1B4F6209273E2001F2816 /* UserRunViewController.swift */,
@@ -385,14 +394,17 @@
 				DFE1B4ED209258A6001F2816 /* loginViewController.swift in Sources */,
 				DFE1B4F520927010001F2816 /* tabBarViewController.swift in Sources */,
 				DF5782B02093C0A500D32AEB /* ProfileDataStore.swift in Sources */,
+				DF5AF90920979883001EE9D5 /* UnitExtensions.swift in Sources */,
 				DF5782AC2093B06700D32AEB /* HealthKitSetupAssistant.swift in Sources */,
 				DF5782B52093E34700D32AEB /* SampleData.swift in Sources */,
 				DFE1B4E420924AF2001F2816 /* CustomButton.swift in Sources */,
 				DFE1B4F3209265D8001F2816 /* Model.xcdatamodeld in Sources */,
 				DFB48C8720856DCE006F3F96 /* ViewController.swift in Sources */,
+				DF5AF90C209798E0001EE9D5 /* detailsofRunViewController.swift in Sources */,
 				DFE1B4F020925AB9001F2816 /* userHomeViewController.swift in Sources */,
 				DFE1B4F7209273E2001F2816 /* UserRunViewController.swift in Sources */,
 				DFB48C8520856DCE006F3F96 /* AppDelegate.swift in Sources */,
+				DF5AF90A20979883001EE9D5 /* FormatDisplay.swift in Sources */,
 				DF7D885D2092E04C007A186F /* MeMainViewController.swift in Sources */,
 				DF5782B22093C3CA00D32AEB /* UserHealthProfile.swift in Sources */,
 			);
