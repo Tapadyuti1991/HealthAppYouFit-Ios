@@ -2,8 +2,11 @@
 # Health Fitness App
 **Instruction to Run**
 1.Download the Project
+
 2.Run the YouFit.xcodeproj in Xcode IDE
+
 3.You can directly Login using username: sample@gmail.com Password : 123 
+
 **APP**: 
 >My final project is based on making an interesting app which track each activities of a person and suggest healthy habits foods suggestions. 
 
