@@ -25,12 +25,20 @@ Use Cases :
 **MainDashBoard**
 
 ![screen shot 2018-04-30 at 6 34 08 pm](https://user-images.githubusercontent.com/23444603/39454086-4816517c-4ca7-11e8-8da9-ef2f0bc12d48.png)
+![screen shot 2018-04-30 at 6 54 15 pm](https://user-images.githubusercontent.com/23444603/39454212-0311d500-4ca8-11e8-957a-7742165f31ef.png)
+
 
 **Running Mode***
 
 ![screen shot 2018-04-30 at 6 17 27 pm](https://user-images.githubusercontent.com/23444603/39454141-94828710-4ca7-11e8-9984-dd0ab11f2837.png)
+![screen shot 2018-04-30 at 6 17 38 pm](https://user-images.githubusercontent.com/23444603/39454202-f4930cc4-4ca7-11e8-99bc-a565fc9e1124.png)
 
 **UpdateBio***
 
 ![screen shot 2018-04-30 at 6 34 30 pm](https://user-images.githubusercontent.com/23444603/39454154-a5792588-4ca7-11e8-8a2d-3c4a5228deca.png)
+![screen shot 2018-04-30 at 6 34 44 pm](https://user-images.githubusercontent.com/23444603/39454223-0f110088-4ca8-11e8-9a49-120f2dd3f99c.png)
+
+
+
+**END**
 
