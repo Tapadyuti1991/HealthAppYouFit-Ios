@@ -18,5 +18,10 @@ Use Cases :
 
 5. User can surf various foods option that he can eat. 
 
+**MainScreenShot**
 
+![screen shot 2018-04-30 at 6 14 47 pm](https://user-images.githubusercontent.com/23444603/39454048-14721748-4ca7-11e8-94f3-f38f40c147af.png)
+![screen shot 2018-04-30 at 6 15 38 pm](https://user-images.githubusercontent.com/23444603/39454069-2c416fae-4ca7-11e8-99e6-dda482cb3659.png)
+**MainDashBoard**
+![screen shot 2018-04-30 at 6 34 08 pm](https://user-images.githubusercontent.com/23444603/39454086-4816517c-4ca7-11e8-8da9-ef2f0bc12d48.png)
 
